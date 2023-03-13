@@ -5,12 +5,11 @@ import java.awt.event.KeyListener;
 
 public class StudentController implements KeyListener {
 
-    Student student;
+    private Student student;
 
-    public StudentController(Student student){
+    public StudentController(Student student) {
         this.student = student;
     }
-
 
     @Override
     public void keyTyped(KeyEvent e) {
@@ -19,26 +18,25 @@ public class StudentController implements KeyListener {
 
     @Override
     public void keyPressed(KeyEvent e) {
-        System.out.println("key pressed" + e.getKeyChar() );
-
-
         int code = e.getKeyCode();
-        // other key commands omitted
-        if (code == KeyEvent.VK_1) {
+        if (code == KeyEvent.VK_A) {
             student.startWalking(-5);
-        } else if (code == KeyEvent.VK_2) {
+        }  if (code == KeyEvent.VK_D) {
             student.startWalking(5);
+        }  if (code == KeyEvent.VK_W || code == KeyEvent.VK_SPACE) {
+            student.jump(12);
+        }
+        if (code==KeyEvent.VK_SHIFT){
+            student.shoot();
         }
     }
-
 
     @Override
     public void keyReleased(KeyEvent e) {
         int code = e.getKeyCode();
-        // other key commands omitted
-        if (code == KeyEvent.VK_1) {
+        if (code == KeyEvent.VK_A ) {
             student.stopWalking();
-        } else if (code == KeyEvent.VK_2) {
+        } if (code == KeyEvent.VK_D) {
             student.stopWalking();
         }
     }
