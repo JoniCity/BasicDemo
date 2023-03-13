@@ -14,7 +14,7 @@ public class Enemy2 extends Walker implements StepListener{
         setPosition(new Vec2(8,-10));
         BodyImage image = new BodyImage("data/enemy2.png", 4.0f);
         addImage(image);
-        startWalking(-walkingSpeed);
+        startWalking(walkingSpeed);
 
     }
 
